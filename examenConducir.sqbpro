@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/ezekAbdo/Documents/NetBeansProjects/Proyecto_DEIN_T2/examenConducir.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1342"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainpregunta"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="pregunta" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="52"/><column index="2" value="88"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="respuestas" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="80"/><column index="2" value="115"/><column index="3" value="94"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">
+
+CREATE TABLE pregunta (
+	id int(9) PRIMARY KEY NOT NULL,
+    pregunta VARCHAR (150) NOT NULL
+);
+
+CREATE TABLE respuestas(
+	correcta int(1) not null,
+	pregunta_id int(9)  NOT NULL,
+    respuesta VARCHAR (150) NOT NULL,
+    FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
+);
+
+INSERT INTO pregunta(pregunta) values (&quot; El chaleco reflectante. ¿Cuándo es obligatorio ponérselo?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;En una intersección en forma de cruz, ¿cuándo está permitido adelantar por la derecha?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Son remolques ligeros aquellos cuya M.M.A...&quot;);
+INSERT INTO pregunta(pregunta) values (&quot; Cuando un carril está delimitado a ambos lados por doble línea discontinua, ¿qué deben hacer los conductores?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Ciclo es el vehículo de...&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Una señal de vado permanente indica...&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;¿Qué pasa cuando se deja el chaleco reflectante expuesto a la luz?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Se prohibe circular por autopistas a los...&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Para incorporarse a una vía por un carril de aceleración, ¿dónde debe cerciorarse de que puede realizar la maniobra sin peligro?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Un turismo con remolque ligero, ¿puede circular por un carril abierto a la circulación en sentido contrario al normal?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Entre un coche y una furgoneta ¿Quién tiene preferencia?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Los indicadores de dirección, ¿para qué se utilizan?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Una vez finalizado el adelantamiento, ¿cuándo se debe regresar al carril derecho?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;Al realizar una maniobra que requiere un desplazamiento lateral, ¿cómo debe señalizarse?&quot;);
+INSERT INTO pregunta(pregunta) values (&quot;En una parada de autobús señalizada, ¿qué está prohibido&quot;);
+
+
+INSERT INTO respuestas VALUES (('1'),('1'),(&quot;Cuando salgo del vehículo en vías urbanas&quot;));
+INSERT INTO respuestas VALUES (('1'),('1'),(&quot;Cuando salgo del vehículo en autopistas y autovías solamente&quot;));
+INSERT INTO respuestas VALUES (('0'),('1'),(&quot;Cuando salgo del vehículo en vías interurbanas&quot;));
+INSERT INTO respuestas VALUES (('1'),('2'),(&quot;Cuando no hay señales de detención obligatoria o ceda el paso&quot;));
+INSERT INTO respuestas VALUES (('0'),('2'),(&quot;Cuando el vehículo que va delante va a girar a la izquierda&quot;));
+INSERT INTO respuestas VALUES (('1'),('2'),(&quot;Cuando no hay señales de vía preferente&quot;));
+INSERT INTO respuestas VALUES (('1'),('3'),(&quot;es igual a 750 kg&quot;));
+INSERT INTO respuestas VALUES (('0'),('3'),(&quot;no supera los 750 kg&quot;));
+INSERT INTO respuestas VALUES (('1'),('3'),(&quot;supera los 750 kg&quot;));
+INSERT INTO respuestas VALUES (('1'),('4'),(&quot; Utilizarlo sólo para adelantar a una velocidad máxima de 80 kilómetros por hora&quot;));
+INSERT INTO respuestas VALUES (('1'),('4'),(&quot;No circular por él porque la circulación está prohibida&quot;));
+INSERT INTO respuestas VALUES (('0'),('4'),(&quot;Entre otras normas, si la circulación está regulada por semáforos de carril, obedecer sus indicaciones&quot;));
+INSERT INTO respuestas VALUES (('1'),('5'),(&quot;dos ruedas accionado con un motor.&quot;));
+INSERT INTO respuestas VALUES (('1'),('5'),(&quot;dos o más ruedas accionado con un motor o con pedales.&quot;));
+INSERT INTO respuestas VALUES (('0'),('5'),(&quot;dos ruedas por lo menos, accionado por su conductor mediante pedales o manivelas.&quot;));
+INSERT INTO respuestas VALUES (('1'),('6'),(&quot;prohibición de parar delante de un VADO.&quot;));
+INSERT INTO respuestas VALUES (('0'),('6'),(&quot;prohibición de estacionar delante de un VADO&quot;));
+INSERT INTO respuestas VALUES (('1'),('6'),(&quot;zona de estacionamiento de duración limitada.&quot;));
+INSERT INTO respuestas VALUES (('1'),('7'),(&quot;Nada, la luz no daña el material.&quot;));
+INSERT INTO respuestas VALUES (('0'),('7'),(&quot; Que pierde sus propiedades reflectantes.&quot;));
+INSERT INTO respuestas VALUES (('1'),('7'),(&quot;Que cambia de color, aunque mantiene sus propiedades reflectantes&quot;));
+INSERT INTO respuestas VALUES (('1'),('8'),(&quot;vehículos que transporten mercancías peligrosas&quot;));
+INSERT INTO respuestas VALUES (('1'),('8'),(&quot;vehículos con remolque.&quot;));
+INSERT INTO respuestas VALUES (('0'),('8'),(&quot;vehículos que no sean capaces de alcanzar en llano 60 km/h&quot;));
+INSERT INTO respuestas VALUES (('1'),('9'),(&quot;El lugar es indiferente&quot;));
+INSERT INTO respuestas VALUES (('1'),('9'),(&quot;Al final del carril de aceleración.&quot;));
+INSERT INTO respuestas VALUES (('0'),('9'),(&quot; Al principio del carril de aceleración.&quot;));
+INSERT INTO respuestas VALUES (('1'),('10'),(&quot;Sí, cuando haya sido abierto por razones de fluidez de la circulación&quot;));
+INSERT INTO respuestas VALUES (('0'),('10'),(&quot;Sí, cuando haya sido abierto por obras en la calzada&quot;));
+INSERT INTO respuestas VALUES (('1'),('10'),(&quot;Sí, siempre&quot;));
+INSERT INTO respuestas VALUES (('1'),('11'),(&quot;La furgoneta&quot;));
+INSERT INTO respuestas VALUES (('0'),('11'),(&quot;El coche&quot;));
+INSERT INTO respuestas VALUES (('1'),('11'),(&quot;El vehículo que circule a mayor velocidad.&quot;));
+INSERT INTO respuestas VALUES (('1'),('12'),(&quot;Únicamente para indicar los cambios de dirección a la derecha o a la izquierda.&quot;));
+INSERT INTO respuestas VALUES (('1'),('12'),(&quot; No tienen mucha utilidad salvo en vías con mucho tráfico&quot;));
+INSERT INTO respuestas VALUES (('0'),('12'),(&quot;Para comunicarse con los demás conductores&quot;));
+INSERT INTO respuestas VALUES (('1'),('13'),(&quot;a los 15 segundos de haber iniciado el adelantamiento&quot;));
+INSERT INTO respuestas VALUES (('1'),('13'),(&quot;cuando haya recorrido 200 metros&quot;));
+INSERT INTO respuestas VALUES (('0'),('13'),(&quot;cuando se vea la parte delantera del vehículo adelantado a través del espejo retrovisor interior&quot;));
+INSERT INTO respuestas VALUES (('1'),('14'),(&quot;Únicamente con las luces intermitentes&quot;));
+INSERT INTO respuestas VALUES (('1'),('14'),(&quot;Únicamente con el brazo&quot;));
+INSERT INTO respuestas VALUES (('0'),('14'),(&quot;Con las luces intermitentes hasta adoptar la nueva trayectoria o con el brazo&quot;));
+INSERT INTO respuestas VALUES (('1'),('15'),(&quot;Adelantar cerca de ella&quot;));
+INSERT INTO respuestas VALUES (('1'),('15'),(&quot;Circular sobre ella&quot;));
+INSERT INTO respuestas VALUES (('0'),('15'),(&quot;Estacionar&quot;));
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
